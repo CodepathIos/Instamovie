@@ -81,7 +81,7 @@ Instamovie is an app that let's you connect with other movie lovers an it recomm
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="WireFirameFinal.jpeg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
