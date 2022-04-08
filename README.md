@@ -90,8 +90,93 @@ Instamovie is an app that let's you connect with other movie lovers an it recomm
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### Users
+
+   | Property	| Type	| Description |
+   |------------| ----- | ----------- |
+   | UserId	    | Number |	Primary key to uniquely identify a particular record |
+   |Name	|String	| Holding the name of the user|
+   |Profile_pic	|File	|Profile Picture of the user|
+|following count| 	Number	|Numbers of people user is following|
+|followercount|	Number	|Numbers of people following the user|
+|userpreferences|	Array|	List of genres user liked following the survey|
+|moviesfavorited|	Array|	List of movieids|
+
+
+#### Movie
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | MovieId      | Number   | Uniquely identify a movie |
+   | Name	        | string| Name of the movie |
+   | Popularity         | Number     | Metrics to filter |
+   | Description      | String   | Basic information about the movie |
+   | Movie_img | Number   | Image/ poster of that particular movie |
+   | Numberoflikes    | Number   | Count of number of likes by users for that movie |
+   | Numberofcomments     | Number | Count of number of comments by users for that movie |
+   | CommentId     | String | This will be foreign key referencing to comment table 
+   | Genre     | String | Genre of the movie 
+
+#### Comments
+
+|Property	|Type|	Description|
+| --------- |----| ------------|
+|CommentId|	Number	|Uniquely identifies a comment -PK and refers back to movie|
+|UserId	|Number	|Refers back to the user
+|Description	|String|	It consists comments made by user|
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+- Home Screen
+      - (Read/GET) Get all the movies based on user preferences
+         ```
+         let query = PFQuery(className:"MovieData")
+query.whereKey("Genre", equalTo: userPreferences)
+query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
+       if let error = error { 
+          print(error.localizedDescription)
+       } else {
+          print("Successfully retrieved \(movies.count) movies.")
+      // TODO: Do something with movies...
+       }
+            }
+         ```
+   - Profile Screen
+      - (Read/GET) Get the current user info
+      ```
+      let query = PFQuery(className:"UserData")
+      query.whereKey("name", equalTo: userName)
+      query.findObjectsInBackground { (user: [PFObject]?, error: Error?) in
+     if let error = error { 
+        print(error.localizedDescription)
+     } else {
+        print("Successfully retrieved \(user) information")
+      // TODO: Do something with user...
+       }
+        }
+        ```
+    
+   - Discover Screen
+      - (Read/GET) Get movie based on search criteria specified
+      ```
+      let query = PFQuery(className:"MovieData")
+        query.whereKey("Genre", equalTo: userPreferences)
+        query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
+       if let error = error { 
+      print(error.localizedDescription)
+       } else {
+      print("Successfully retrieved \(movies.count) movies.")
+        // TODO: Do filtering on the movies based on the search criteria. 
+       }
+        }
+
+      ```
+    
+### [OPTIONAL: List endpoints if using existing API such as Yelp]
+#### Using: MovieDB API: https://www.themoviedb.org/?language=en-US
+   |HTTP Verb | Endpoint | Description|
+   ----------|----------|------------|
+   | `GET`    | /id | get the specific movie id|
+   | `GET`    | /name | get the movie name|
+   | `GET`    | /poster_path   | get the path of the poster|
+   | `GET`    | /parts.genre_ids| returns the movies genre|
+   |`GET`    | /overview| returns an overview of the movie|
