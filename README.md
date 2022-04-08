@@ -88,7 +88,7 @@ Instamovie is an app that let's you connect with other movie lovers an it recomm
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
+
 ### Models
 #### Users
 
@@ -126,12 +126,13 @@ Instamovie is an app that let's you connect with other movie lovers an it recomm
 |Description	|String|	It consists comments made by user|
 
 ### Networking
-- Home Screen
+    
+  - Home Screen
       - (Read/GET) Get all the movies based on user preferences
-         ```
+      ```
          let query = PFQuery(className:"MovieData")
-query.whereKey("Genre", equalTo: userPreferences)
-query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
+      query.whereKey("Genre", equalTo: userPreferences)
+      query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
        if let error = error { 
           print(error.localizedDescription)
        } else {
