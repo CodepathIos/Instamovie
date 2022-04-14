@@ -119,9 +119,9 @@ Basic Student loan Calculation app that helps keep track and manage payments.
    |------------| ----- | ----------- |
    | LoanId	    | Number |	Primary key to uniquely identify a particular record |
    |P.amount	|Number	| Principal amount of the Loan|
-  | Interest_rate | Number     | Interest rate of the Loan |
+   | Interest_rate | Number     | Interest rate of the Loan |
    |Years   |Number	| Years duration for the loan|
- | Paid_amount     |Number   | Amount already paid so far |
+   | Paid_amount     |Number   | Amount already paid so far |
  
 ### Networking
 - [Add list of network requests by screen ]
