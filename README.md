@@ -136,7 +136,7 @@ Basic Student loan Calculation app that helps keep track and manage payments.
      if let error = error { 
         print(error.localizedDescription)
      } else {
-        print("Successfully retrieved \(user) information")
+        print("Successfully retrieved \(loan) information")
       // TODO: Do something with loan...
        }
         }
@@ -151,8 +151,8 @@ Basic Student loan Calculation app that helps keep track and manage payments.
        if let error = error { 
       print(error.localizedDescription)
        } else {
-      print("Successfully retrieved \(User.UserId) movies.")
-        // TODO: Do something with the user
+      print("Successfully retrieved \(user) information")
+        // TODO: Do something with the user...
        }
         }
 
