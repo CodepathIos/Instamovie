@@ -126,4 +126,35 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
+
+   - Tracker Screen
+      - (Read/GET) Get the current loan info
+      ```
+      let query = PFQuery(className:"Loans")
+      query.whereKey("LoanId", equalTo: loanId)
+      query.findObjectsInBackground { (user: [PFObject]?, error: Error?) in
+     if let error = error { 
+        print(error.localizedDescription)
+     } else {
+        print("Successfully retrieved \(user) information")
+      // TODO: Do something with loan...
+       }
+        }
+        ```
+    
+   - Profile Screen
+      - (Read/GET) Get the user info
+      ```
+      let query = PFQuery(className:"Users")
+        query.whereKey("UserId", equalTo: userId)
+        query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
+       if let error = error { 
+      print(error.localizedDescription)
+       } else {
+      print("Successfully retrieved \(User.UserId) movies.")
+        // TODO: Do something with the user
+       }
+        }
+
+      ```
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
