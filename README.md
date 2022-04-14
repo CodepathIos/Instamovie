@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
 
-# Instamovie 
+# Student Loan Calculator
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -11,17 +11,17 @@ Original App Design Project - README Template
 
 ## Overview
 ### Description
-Instamovie is an app that let's you connect with other movie lovers an it recommends you movies based on connections and preferences.
+Basic Student loan Calculation app that helps keep track and manage payments.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
-- **Category:** Entertainment/Social Networking
-- **Mobile:** This app is intended for iOS. 
-- **Story:** Takes the users movie prefrences to suggest new movies and connects like-minded users.
-- **Market:** Any movie lovers with access to internet and iOS device.
-- **Habit:** This app can be used periodically based on how often a user watched movies.
-- **Scope:** Based on the survey taken from the user, we will provide them with a collection of movies personalized to their preferences. Our users will also have the chance to connect with other users based on shared interests.
- 
+- **Category:** Finance
+- **Mobile:** This app is intended for iOS.
+- **Story:** Takes loan information and based on that provides monthly payments and loan tracking.
+- **Market:** All students who need help manging there student loans.
+- **Habit:** This app can be used whenever the user needs to view info on loan.
+- **Scope:** Based on loan info we will provide them with ideal loan payment based on time constraint and compare loan progress based on current payment.
+
 ## Product Spec
 
 ### 1. User Stories (Required and Optional)
@@ -30,154 +30,100 @@ Instamovie is an app that let's you connect with other movie lovers an it recomm
 
 * Login
 * Sign up
-    * Survey Tab 
-* Home Tab
-* Discover Tab
-* Profile tab  
+* Tracking screen
+* Calculation screen
+* results(Segue from Calculation screen)
+* Settings
+
+**Optional Nice-to-have Stories**
+
+* Generalizing app to accomodate for loans other than student loans.
 
 ### 2. Screen Archetypes
+
 * Login
 * Signup
-   * Username
-   * Name 
    * Email
+   * Name
    * Password
-   * Survey
-* Home Tab
-   * Shows movies based on popularity between followers and use preferences. 
-* Profile Tab
-   * Profile picture
-   * Follower Count
-   * Following Count
-   * Collection of movies favorited
-* Discover Tab 
-   * Search bar
-   * Filters
-   * Populates with search results
-   
+* Calculating Screen
+   * Principal Amount
+   * loan rate
+   * start date
+   * duration
+   * Amount paid
+* Tracking Screen
+   * Progress Graph
+   * Total Left
+   * adjustable monthly payment
+* Setting
+   * Name
+   * Email
+   * change password
+   * Profile Picture
+* Result 
+   * Monthly Payment 
+   * Total cost 
+   * Loan details
+
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
 * Login
 * Sign up
-    * Survey Tab 
-* Home Tab
-* Discover Tab
-* Profile tab 
+* Tracking screen
+* Calculation screen
+  * results(Segue from Calculation screen)
+* Settings
 
 **Flow Navigation** (Screen to Screen)
 
-* Signup -> Creates account if user doesnot have one. 
-   * The user is asked a survey upon sign up.
-
-* Profile
-   * The User can change profile picture
-   * Can go through the follower and following list
-   * Can tap on a Movie to expand details.
-* Discover 
-   * Can tap on a Movie to expand details.
-   * User is able to comment and favorite movies.
+* Signup -> Creates account if user doesnot have one.
+  * User is sent to calculation screen
+* Setting
+  * The User can change profile picture
+  * The User can change password
+* Login
+  * User is sent to Tracking screen
+* Tracking Screen
+  * User can view loan progress
+  * Change monthly payment to see affect on progress
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="WireFirameFinal.jpeg" width=600>
+<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-
+[This section will be completed in Unit 9]
 ### Models
 #### Users
 
-   | Property	| Type	| Description |
-   |------------| ----- | ----------- |
-   | UserId	    | Number |	Primary key to uniquely identify a particular record |
-   |Name	|String	| Holding the name of the user|
-   |Profile_pic	|File	|Profile Picture of the user|
-|following count| 	Number	|Numbers of people user is following|
-|followercount|	Number	|Numbers of people following the user|
-|userpreferences|	Array|	List of genres user liked following the survey|
-|moviesfavorited|	Array|	List of movieids|
-
-
-#### Movie
-
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   | MovieId      | Number   | Uniquely identify a movie |
-   | Name	        | string| Name of the movie |
-   | Popularity         | Number     | Metrics to filter |
-   | Description      | String   | Basic information about the movie |
-   | Movie_img | Number   | Image/ poster of that particular movie |
-   | Numberoflikes    | Number   | Count of number of likes by users for that movie |
-   | Numberofcomments     | Number | Count of number of comments by users for that movie |
-   | CommentId     | String | This will be foreign key referencing to comment table 
-   | Genre     | String | Genre of the movie 
+   | UserId      | Number   | Uniquely identify a user |
+   | UserName	        | string| Name of the user |
+   | Password         | string     | password for the account |
+   | Email     | String   | Email for the account |
+   | Profile_pic | File   | Image/ poster of that user |
+   | Loan_Id   | Number   | to connect with loan table |
+   
+   
+#### Loans
 
-#### Comments
-
-|Property	|Type|	Description|
-| --------- |----| ------------|
-|CommentId|	Number	|Uniquely identifies a comment -PK and refers back to movie|
-|UserId	|Number	|Refers back to the user
-|Description	|String|	It consists comments made by user|
-
+   | Property	| Type	| Description |
+   |------------| ----- | ----------- |
+   | LoanId	    | Number |	Primary key to uniquely identify a particular record |
+   |P.amount	|Number	| Principal amount of the Loan|
+  | Interest_rate | Number     | Interest rate of the Loan |
+   |Years   |Number	| Years duration for the loan|
+ | Paid_amount     |Number   | Amount already paid so far |
+ 
 ### Networking
-    
-  - Home Screen
-      - (Read/GET) Get all the movies based on user preferences
-      ```
-         let query = PFQuery(className:"MovieData")
-      query.whereKey("Genre", equalTo: userPreferences)
-      query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
-       if let error = error { 
-          print(error.localizedDescription)
-       } else {
-          print("Successfully retrieved \(movies.count) movies.")
-      // TODO: Do something with movies...
-       }
-            }
-         ```
-   - Profile Screen
-      - (Read/GET) Get the current user info
-      ```
-      let query = PFQuery(className:"UserData")
-      query.whereKey("name", equalTo: userName)
-      query.findObjectsInBackground { (user: [PFObject]?, error: Error?) in
-     if let error = error { 
-        print(error.localizedDescription)
-     } else {
-        print("Successfully retrieved \(user) information")
-      // TODO: Do something with user...
-       }
-        }
-        ```
-    
-   - Discover Screen
-      - (Read/GET) Get movie based on search criteria specified
-      ```
-      let query = PFQuery(className:"MovieData")
-        query.whereKey("Genre", equalTo: userPreferences)
-        query.findObjectsInBackground { (movies: [PFObject]?, error: Error?) in
-       if let error = error { 
-      print(error.localizedDescription)
-       } else {
-      print("Successfully retrieved \(movies.count) movies.")
-        // TODO: Do filtering on the movies based on the search criteria. 
-       }
-        }
-
-      ```
-    
-### [OPTIONAL: List endpoints if using existing API such as Yelp]
-#### Using: MovieDB API: https://www.themoviedb.org/?language=en-US
-   |HTTP Verb | Endpoint | Description|
-   ----------|----------|------------|
-   | `GET`    | /id | get the specific movie id|
-   | `GET`    | /name | get the movie name|
-   | `GET`    | /poster_path   | get the path of the poster|
-   | `GET`    | /parts.genre_ids| returns the movies genre|
-   |`GET`    | /overview| returns an overview of the movie|
+- [Add list of network requests by screen ]
+- [Create basic snippets for each Parse network request]
+- [OPTIONAL: List endpoints if using existing API such as Yelp]
