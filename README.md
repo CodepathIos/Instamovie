@@ -158,3 +158,7 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 
       ```
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+#### Progress gifs for Sprint 1
+<img src="http://g.recordit.co/UEIuiXc2d1.gif" width=600>
+
