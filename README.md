@@ -94,9 +94,10 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 [Add picture of your hand sketched wireframes in this section]
 <img src="WireFramesLoanCalcPic.jpeg" width=600>
 
-### [BONUS] Digital Wireframes & Mockups
+### Digital Wireframes & Mockups
+<img src="Screen Shot 2022-04-15 at 10.58.07 PM.png" width=600>
 
-### [BONUS] Interactive Prototype
+### Interactive Prototype
 <img src="http://g.recordit.co/DNcTj8Y71e.gif" width=600>
 
 ## Schema 
