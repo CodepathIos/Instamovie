@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class ResultViewController: UIViewController {
 
@@ -18,6 +19,9 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var TotalLoan: UILabel!
     
     @IBOutlet weak var Total: UILabel!
+    
+    var barChart = BarChartView()
+    
     
     var principal_amount = 0.0
         var total = 0.0
@@ -44,4 +48,24 @@ class ResultViewController: UIViewController {
     */
 
 }
+    override func viewDidLayoutSubviews() {
+            super.viewDidLayoutSubviews()
+            let wierdShape = UIView(frame: CGRect(x: 0, y: 400, width: self.view.frame.size.width, height: self.view.frame.size.width))
+            wierdShape.backgroundColor = .orange
+            view.addSubview(wierdShape)
+            barChart.frame = CGRect(x: 0, y: 400, width: self.view.frame.size.width, height: self.view.frame.size.width)
+            barChart.center = wierdShape.center
+            view.addSubview(barChart)
+            var entries =  [BarChartDataEntry]()
+            for x in 0...(loan_duration*12){
+                entries.append(BarChartDataEntry(x: Double(x), y: (Double(x)*total)))
+            }
+            let set = BarChartDataSet(entries: entries)
+            set.colors = ChartColorTemplates.joyful()
+            let data = BarChartData(dataSet: set)
+            barChart.data = data
+     
+            
+        }
+
 }
