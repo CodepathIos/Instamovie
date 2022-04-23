@@ -7,6 +7,7 @@ target 'LoanCalc' do
 
   # Pods for LoanCalc
   pod 'Parse'
+  pod 'Charts'
 
   target 'LoanCalcTests' do
     inherit! :search_paths
