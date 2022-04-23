@@ -164,3 +164,5 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 #### Progress gifs for Sprint 1
 <img src="http://g.recordit.co/UEIuiXc2d1.gif" width=600>
 
+### Progress gifs for Sprint 2
+<img src="sprint2.gif" width=600>
