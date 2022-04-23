@@ -32,7 +32,7 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 - [X] Sign up
 - [ ] Tracking screen
 - [X] Calculation screen
-- [ ] Results(Segue from Calculation screen)
+- [X] Results(Segue from Calculation screen)
 - [ ] Settings
 
 **Optional Nice-to-have Stories**
