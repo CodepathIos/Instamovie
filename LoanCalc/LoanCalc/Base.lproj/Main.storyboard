@@ -250,11 +250,26 @@
                                     <segue destination="BYZ-38-t0r" kind="presentation" id="w3y-B7-jOr"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Additional Amount:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phw-KF-OfW">
+                                <rect key="frame" x="25" y="826" width="369" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="nSs-Gi-MMi">
+                                <rect key="frame" x="23" y="789" width="335" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="sliderValueChange:" destination="AIm-pH-aXM" eventType="valueChanged" id="Lk5-Ju-QSd"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9mK-AH-x7b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="Doc1" destination="Phw-KF-OfW" id="tRh-2D-sab"/>
                         <outlet property="InterestRate" destination="YXn-jI-e8O" id="lKR-bg-xQd"/>
                         <outlet property="LoanDuration" destination="BRL-sc-GeJ" id="McN-iz-npl"/>
                         <outlet property="PrincipalAmount" destination="2FZ-nV-Co2" id="Tl1-ne-Z0e"/>
@@ -268,7 +283,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xao-gX-Wnx"/>
         <segue reference="w3y-B7-jOr"/>
     </inferredMetricsTieBreakers>
     <resources>
