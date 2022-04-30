@@ -30,7 +30,7 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 
 - [X] Login 
 - [X] Sign up
-- [ ] Tracking screen
+- [X] Tracking screen
 - [X] Calculation screen
 - [X] Results(Segue from Calculation screen)
 - [ ] Settings
@@ -166,3 +166,6 @@ Basic Student loan Calculation app that helps keep track and manage payments.
 
 ### Progress gifs for Sprint 2
 <img src="sprint2.gif" width=600>
+
+### Progress gifs for Sprint 3
+<img src="sprint3.gif" width=600>
