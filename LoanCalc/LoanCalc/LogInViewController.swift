@@ -5,6 +5,9 @@
 //  Created by Saiman Tamang on 4/15/22.
 //
 
+// TODO - Loading Screen when fetching user name and password
+// TODO - User Persistance
+
 import UIKit
 import Parse
 
@@ -17,12 +20,18 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        // Apearance
+        usernameField.placeholder = "JohnDoe123"
+        setTextFiledAppearance(textField: usernameField)
+        setTextFiledAppearance(textField: passwordField)
+        passwordField.placeholder = "Passsword123"
     }
     
     @IBAction func onLogIn(_ sender: Any) {
         let username = usernameField.text!
         let password = passwordField.text!
-        
+        // TODO - Error Handeling
         PFUser.logInWithUsername(inBackground: username, password: password) { (user, error) in
             if user != nil {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)
@@ -37,7 +46,7 @@ class LogInViewController: UIViewController {
         var user = PFUser()
         user.username = usernameField.text
         user.password = passwordField.text
-        
+        // TODO - Error Handeling
         user.signUpInBackground { (success, error) in
             if success {
                 self.performSegue(withIdentifier: "loginSegue", sender: nil)

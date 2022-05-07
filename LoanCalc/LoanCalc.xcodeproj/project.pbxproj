@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		02B7196F9CEC9C4F29C248D0 /* Pods_LoanCalc_LoanCalcUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7108570E41FF5953A62797A7 /* Pods_LoanCalc_LoanCalcUITests.framework */; };
 		1024DAB422C8D38DB9201891 /* Pods_LoanCalc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF54839EFA6D49A6EE8AF2BF /* Pods_LoanCalc.framework */; };
+		AF4FBE74282623E700322C9E /* CustomUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBE73282623E700322C9E /* CustomUIElements.swift */; };
+		AF4FBE75282623E700322C9E /* CustomUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBE73282623E700322C9E /* CustomUIElements.swift */; };
+		AF4FBE76282623E700322C9E /* CustomUIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4FBE73282623E700322C9E /* CustomUIElements.swift */; };
 		D145B0DA2809FEDF00C4A81D /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145B0D92809FEDF00C4A81D /* LogInViewController.swift */; };
 		D145B0F0280A17A200C4A81D /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D145B0EF280A17A200C4A81D /* CalculatorViewController.swift */; };
 		D1597BF62810898B0098B42E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1597BF52810898B0098B42E /* ResultViewController.swift */; };
@@ -47,6 +50,7 @@
 		7108570E41FF5953A62797A7 /* Pods_LoanCalc_LoanCalcUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoanCalc_LoanCalcUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75A7ACDDE9F292BE88E7536D /* Pods-LoanCalc-LoanCalcUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalc-LoanCalcUITests.debug.xcconfig"; path = "Target Support Files/Pods-LoanCalc-LoanCalcUITests/Pods-LoanCalc-LoanCalcUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7D5A8637FFBB9AB8644A2289 /* Pods-LoanCalc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalc.debug.xcconfig"; path = "Target Support Files/Pods-LoanCalc/Pods-LoanCalc.debug.xcconfig"; sourceTree = "<group>"; };
+		AF4FBE73282623E700322C9E /* CustomUIElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomUIElements.swift; sourceTree = "<group>"; };
 		AF54839EFA6D49A6EE8AF2BF /* Pods_LoanCalc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoanCalc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C66B7104934CA166DFB1F3FE /* Pods-LoanCalc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoanCalc.release.xcconfig"; path = "Target Support Files/Pods-LoanCalc/Pods-LoanCalc.release.xcconfig"; sourceTree = "<group>"; };
 		D145B0D92809FEDF00C4A81D /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,7 @@
 				D145B0D92809FEDF00C4A81D /* LogInViewController.swift */,
 				D145B0EF280A17A200C4A81D /* CalculatorViewController.swift */,
 				D1597BF52810898B0098B42E /* ResultViewController.swift */,
+				AF4FBE73282623E700322C9E /* CustomUIElements.swift */,
 			);
 			path = LoanCalc;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				D177EA042808AC1500F23B68 /* SceneDelegate.swift in Sources */,
 				D145B0F0280A17A200C4A81D /* CalculatorViewController.swift in Sources */,
 				D145B0DA2809FEDF00C4A81D /* LogInViewController.swift in Sources */,
+				AF4FBE74282623E700322C9E /* CustomUIElements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +431,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D177EA192808AC2500F23B68 /* LoanCalcTests.swift in Sources */,
+				AF4FBE75282623E700322C9E /* CustomUIElements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D177EA242808AC2500F23B68 /* LoanCalcUITests.swift in Sources */,
+				AF4FBE76282623E700322C9E /* CustomUIElements.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

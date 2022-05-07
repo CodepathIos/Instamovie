@@ -10,19 +10,21 @@ import UIKit
 class CalculatorViewController: UIViewController {
 
     @IBOutlet weak var PrincipalAmountTextField: UITextField!
-    
     @IBOutlet weak var LoanRateTextField: UITextField!
-    
     @IBOutlet weak var LoanDurationTextField: UITextField!
-    
     @IBOutlet weak var StartDateTextField: UITextField!
-    
     @IBOutlet weak var AmountPaidTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        //Appearance
+        setTextFiledAppearance(textField: principalAmountTextField)
+        setTextFiledAppearance(textField: loanRateTextField)
+        setTextFiledAppearance(textField: loanDurationTextField)
+        setTextFiledAppearance(textField: startDateTextField)
+        setTextFiledAppearance(textField: amountPaidTextField)
     }
     
     @IBAction func calculatePayment(_ sender: Any) {
@@ -52,17 +54,6 @@ class CalculatorViewController: UIViewController {
             destinationVC.interest_rate = interest_rate
             destinationVC.loan_duration = loan_duration
         }
-        
-        /*
-        // MARK: - Navigation
-     
-        // In a storyboard-based application, you will often want to do a little preparation before navigation
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Get the new view controller using segue.destination.
-            // Pass the selected object to the new view controller.
-        }
-        */
-     
     }
 
 

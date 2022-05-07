@@ -39,6 +39,13 @@ class ResultViewController: UIViewController {
             TotalLoan.text = "Total Loan: $" + String(total_loan)
             Total.text = "Monthly Payment: $" + String(total)
             
+            //Appearance
+            setLabelAppreance(label: principalAmountLabel)
+            setLabelAppreance(label: interestRateLabel)
+            setLabelAppreance(label: loanDurationLabel)
+            setLabelAppreance(label: totalLoanLabel)
+            setLabelAppreance(label: totalLabel)
+            
         }
         override func viewDidLayoutSubviews() {
             
