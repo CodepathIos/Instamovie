@@ -9,11 +9,11 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 
-    @IBOutlet weak var PrincipalAmountTextField: UITextField!
-    @IBOutlet weak var LoanRateTextField: UITextField!
-    @IBOutlet weak var LoanDurationTextField: UITextField!
-    @IBOutlet weak var StartDateTextField: UITextField!
-    @IBOutlet weak var AmountPaidTextField: UITextField!
+    @IBOutlet weak var principalAmountTextField: UITextField!
+    @IBOutlet weak var loanRateTextField: UITextField!
+    @IBOutlet weak var loanDurationTextField: UITextField!
+    @IBOutlet weak var startDateTextField: UITextField!
+    @IBOutlet weak var amountPaidTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,9 +34,9 @@ class CalculatorViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 
             // Create a variable to store the name the user entered on textField
-            let principal_amount = Double(PrincipalAmountTextField.text!) ?? 0
-            var interest_rate = Double(LoanRateTextField.text!) ?? 0
-            let loan_duration = Int(LoanDurationTextField.text!) ?? 0
+            let principal_amount = Double(principalAmountTextField.text!) ?? 0
+            var interest_rate = Double(loanRateTextField.text!) ?? 0
+            let loan_duration = Int(loanDurationTextField.text!) ?? 0
             interest_rate = interest_rate/100
             var total = principal_amount * (
                 (interest_rate / 12) /

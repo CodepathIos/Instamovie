@@ -10,17 +10,12 @@ import Charts
 
 class ResultViewController: UIViewController {
 
-    @IBOutlet weak var PrincipalAmount: UILabel!
-    
-    @IBOutlet weak var InterestRate: UILabel!
-    
-    @IBOutlet weak var LoanDuration: UILabel!
-    
-    @IBOutlet weak var TotalLoan: UILabel!
-    
-    @IBOutlet weak var Total: UILabel!
-    
-    @IBOutlet weak var Doc1: UILabel!
+    @IBOutlet weak var principalAmountLabel: UILabel!
+    @IBOutlet weak var interestRateLabel: UILabel!
+    @IBOutlet weak var loanDurationLabel: UILabel!
+    @IBOutlet weak var totalLoanLabel: UILabel!
+    @IBOutlet weak var totalLabel: UILabel!
+    @IBOutlet weak var doc1Label: UILabel!
     
     var barChart = BarChartView()
         
@@ -33,11 +28,11 @@ class ResultViewController: UIViewController {
             super.viewDidLoad()
             //barChart.delegate = self
             // Do any additional setup after loading the view.
-            PrincipalAmount.text = "Principal Amount: $" + String(principal_amount)
-            LoanDuration.text = "Loan Duration: " + String(loan_duration) + " Years"
-            InterestRate.text = "Interest Rate: " + String(interest_rate*100) + "%"
-            TotalLoan.text = "Total Loan: $" + String(total_loan)
-            Total.text = "Monthly Payment: $" + String(total)
+            principalAmountLabel.text = "Principal Amount: $" + String(principal_amount)
+            loanDurationLabel.text = "Loan Duration: " + String(loan_duration) + " Years"
+            interestRateLabel.text = "Interest Rate: " + String(interest_rate*100) + "%"
+            totalLoanLabel.text = "Total Loan: $" + String(ceil(total_loan)) + " $"
+            totalLabel.text = "Monthly Payment: $" + String(total) + " $"
             
             //Appearance
             setLabelAppreance(label: principalAmountLabel)
@@ -51,7 +46,7 @@ class ResultViewController: UIViewController {
             
             super.viewDidLayoutSubviews()
             let wierdShape = UIView(frame: CGRect(x: 0, y: 370, width: self.view.frame.size.width, height: self.view.frame.size.width))
-            wierdShape.backgroundColor = .orange
+            wierdShape.backgroundColor = .darkGreen
             view.addSubview(wierdShape)
             barChart.frame = CGRect(x: 0, y: 370, width: self.view.frame.size.width, height: self.view.frame.size.width)
             barChart.center = wierdShape.center
@@ -79,7 +74,7 @@ class ResultViewController: UIViewController {
                total = roundedtotal
                total = total + (Double(currentValue)-Double(prevValue))
                loan_duration = Int(total_loan/total)
-               Doc1.text = "Additional Amount: $" + "\(currentValue) "+"\(total)"
+               doc1Label.text = "Additional Amount: $" + "\(currentValue) "+"\(total)"
                prevValue = currentValue
                viewDidLayoutSubviews()
     }
